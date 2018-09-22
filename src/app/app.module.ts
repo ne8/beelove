@@ -6,13 +6,15 @@ import {MenuComponent} from './menu/menu/menu.component';
 import { ImageSliderComponent } from './slider/image-slider/image-slider.component';
 import {HttpClientModule} from '@angular/common/http';
 import { AboutUsComponent } from './about-us/about-us/about-us.component';
+import { ColorBeePipe } from './pipes/color-bee.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     ImageSliderComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    ColorBeePipe
   ],
   imports: [
     BrowserModule,

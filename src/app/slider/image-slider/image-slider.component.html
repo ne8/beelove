@@ -10,8 +10,8 @@
     <div class="text-container">
       <div class="page-text" *ngFor="let i of sliderArray;let select = index;"
            [ngClass]="{'selected': select == selectedIndex}">
-        <h2>Straight <span class="yellow-bee">from</span> the <span class="yellow-bee">hive</span></h2>
-        <h3>Discover the natural wonders of honey</h3>
+        <h2 [innerHtml]=" i.title | colorBee:'*'"></h2>
+        <h3> {{i.description}}</h3>
       </div>
       <div class="shop-button">
         <div class="bee-shop-button">Shop now</div>
