@@ -1,0 +1,33 @@
+<div class="slider-section">
+
+  <div class="slider-container">
+    <div class="img-container" *ngFor="let i of sliderArray; let select = index;"
+         [ngClass]="{'selected': select == selectedIndex}">
+      <img src="{{i.img}}" alt="{{i.alt}}">
+    </div>
+
+    <!--</div>-->
+    <div class="text-container">
+      <div class="page-text" *ngFor="let i of sliderArray;let select = index;"
+           [ngClass]="{'selected': select == selectedIndex}">
+        <h2>Straight <span class="yellow-bee">from</span> the <span class="yellow-bee">hive</span></h2>
+        <h3>Discover the natural wonders of honey</h3>
+      </div>
+      <div class="shop-button">
+        <div class="bee-shop-button">Shop now</div>
+      </div>
+    </div>
+    <div class="slider">
+      <div class="slide-button-parent-container" *ngFor="let i of sliderArray; let x =index" (click)="selected(x)"
+           (keypress)="keySelected(x)">
+        <div class="select-box">
+          <div class="slide-button" [ngClass]="{'slide-button-select': x == selectedIndex}">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>

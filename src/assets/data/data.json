@@ -1,0 +1,21 @@
+{
+  "sliderArray" : [
+      {
+        "img": "assets/images/slides/slides_1.jpg",
+        "alt": "Straight from the hive",
+        "title": "Straight from the hive",
+        "description": "Discover the natural wonders of honey"
+      },
+      {
+        "img": "assets/images/slides/slides_2.jpg",
+        "alt": "",
+        "title": "222"
+      },
+
+      {
+        "img": "assets/images/slides/slides_3.jpg",
+        "alt": "",
+        "title": "33"
+      }
+  ]
+}
