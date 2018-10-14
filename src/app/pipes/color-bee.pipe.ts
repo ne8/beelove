@@ -9,12 +9,11 @@ export class ColorBeePipe implements PipeTransform {
   constructor(private sanitized: DomSanitizer) {
   }
 
-  transform(text: string, separator): any {
+  transform(text: string, separator): SafeHtml {
     if (text !== undefined) {
       const words = text.split(separator);
       let result = '';
       let i = 0;
-      console.log(words);
       for (const word of words) {
         if (i === 0) {
           result += word;
@@ -24,9 +23,7 @@ export class ColorBeePipe implements PipeTransform {
           i = 0;
         }
       }
-      // return ;
       return this.sanitized.bypassSecurityTrustHtml(result);
-
     }
   }
 

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {DataService} from '../providers/data.service';
+import {SliderDataService} from '../providers/slider-data.service';
 import {interval} from 'rxjs';
 
 @Component({
@@ -13,7 +13,7 @@ export class ImageSliderComponent implements OnInit {
   sliderArray: object[];
   refreshInterval: number;
 
-  constructor(private data: DataService) {
+  constructor(private data: SliderDataService) {
     this.sliderArray = [];
     this.selectedIndex = 0;
     this.transform = 100;
@@ -21,11 +21,10 @@ export class ImageSliderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.data.getData().subscribe((result: Result) => {
+    this.data.getData().subscribe((result: SliderContent) => {
       this.sliderArray = result.sliderArray;
     });
     interval(this.refreshInterval).subscribe(x => {
-      console.log(this.selectedIndex);
       if (this.selectedIndex + 2 > this.sliderArray.length) {
         this.selectedIndex = 0;
       } else {
@@ -47,7 +46,7 @@ export class ImageSliderComponent implements OnInit {
   }
 }
 
-interface Result {
+interface SliderContent {
   sliderArray: SliderImage[];
 }
 

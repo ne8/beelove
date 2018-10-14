@@ -7,6 +7,7 @@ import { ImageSliderComponent } from './slider/image-slider/image-slider.compone
 import {HttpClientModule} from '@angular/common/http';
 import { AboutUsComponent } from './about-us/about-us/about-us.component';
 import { ColorBeePipe } from './pipes/color-bee.pipe';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ColorBeePipe } from './pipes/color-bee.pipe';
     MenuComponent,
     ImageSliderComponent,
     AboutUsComponent,
-    ColorBeePipe
+    ColorBeePipe,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

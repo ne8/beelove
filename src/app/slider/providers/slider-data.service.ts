@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
-const URL = '/assets/data/data.json';
+const URL = '/assets/data/slider-data.json';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class SliderDataService {
 
 
   constructor(private http: HttpClient) {
