@@ -11,6 +11,10 @@ import { FooterComponent } from './footer/footer.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AppRoutesModule } from './routes/routes.module';
 import { ShopListComponent } from './shop/shop-list/shop-list.component';
+import { CartComponent } from './shop/cart/cart.component';
+import { ProductComponent } from './shop/product/product.component';
+import { HoneyComponent } from './honey/honey/honey.component';
+import { HtmlSanitizerPipe } from './pipes/html-sanitizer.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { ShopListComponent } from './shop/shop-list/shop-list.component';
     ColorBeePipe,
     FooterComponent,
     HomePageComponent,
-    ShopListComponent
+    ShopListComponent,
+    CartComponent,
+    ProductComponent,
+    HoneyComponent,
+    HtmlSanitizerPipe
   ],
   imports: [
     BrowserModule,

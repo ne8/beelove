@@ -4,6 +4,7 @@ import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 @Pipe({
   name: 'colorBee'
 })
+//TODO: sanitizer to display html
 export class ColorBeePipe implements PipeTransform {
 
   constructor(private sanitized: DomSanitizer) {
