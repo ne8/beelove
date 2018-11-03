@@ -26,7 +26,6 @@ export class AboutUsComponent implements OnInit {
   ngOnInit() {
     this.dataService.getAboutUsContent().subscribe((result: AboutUsContent) => {
       this.aboutUsContent = result;
-      console.log(this.aboutUsContent);
     });
     this.dataService.getAboutUsBannerContent().subscribe((result: Banner) => {
         this.aboutUsBanner = result;

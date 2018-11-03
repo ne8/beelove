@@ -8,6 +8,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { AboutUsComponent } from './about-us/about-us/about-us.component';
 import { ColorBeePipe } from './pipes/color-bee.pipe';
 import { FooterComponent } from './footer/footer.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { AppRoutesModule } from './routes/routes.module';
+import { ShopListComponent } from './shop/shop-list/shop-list.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,14 @@ import { FooterComponent } from './footer/footer.component';
     ImageSliderComponent,
     AboutUsComponent,
     ColorBeePipe,
-    FooterComponent
+    FooterComponent,
+    HomePageComponent,
+    ShopListComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutesModule
   ],
   providers: [],
   bootstrap: [AppComponent],

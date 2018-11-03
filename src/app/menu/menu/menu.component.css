@@ -103,3 +103,6 @@
 
 
 /*.scheme_original a*/
+.active {
+  color: #f8b742!important;
+}
