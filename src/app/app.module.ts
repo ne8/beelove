@@ -16,6 +16,8 @@ import { ProductComponent } from './shop/product/product.component';
 import { HoneyComponent } from './honey/honey/honey.component';
 import { HtmlSanitizerPipe } from './pipes/html-sanitizer.pipe';
 import { BlogPostComponent } from './honey/blog-post/blog-post.component';
+import { CheckoutComponent } from './shop/checkout/checkout.component';
+import { NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -31,12 +33,14 @@ import { BlogPostComponent } from './honey/blog-post/blog-post.component';
     ProductComponent,
     HoneyComponent,
     HtmlSanitizerPipe,
-    BlogPostComponent
+    BlogPostComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutesModule
+    AppRoutesModule,
+    NgbModalModule
   ],
   providers: [],
   bootstrap: [AppComponent],

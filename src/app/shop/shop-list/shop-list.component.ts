@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product';
+import { ProductsDataService } from './providers/products-data.service';
 
 @Component({
   selector: 'app-shop-list',
@@ -10,14 +11,20 @@ export class ShopListComponent implements OnInit {
 
   addedProductsToCart: Product[];
   availableProducts: Product[];
-  constructor() {
+  constructor(public productDataService: ProductsDataService) {
     this.addedProductsToCart = [];
     this.availableProducts = []
    }
 
   ngOnInit() {
-    this.addToCart();
+    // this.addToCart();
+    this.productDataService.getProucts().subscribe((result: any) => {
+      this.availableProducts = result;
+      console.log(this.availableProducts);
+    });
   }
+
+
   // <!-- <app-cart name="Miere propolis" quantity="1" price="10" pathToImage="assets/images/products/miere-propolis.jpg" alt="Miere propolis"></app-cart> -->
 
   addToCart(){
@@ -28,6 +35,8 @@ export class ShopListComponent implements OnInit {
     this.availableProducts.push(firstProduct);
     this.availableProducts.push(firstProduct);
   }
+
+
   handleProduct(product) {
     this.addedProductsToCart.push(product);
   }
