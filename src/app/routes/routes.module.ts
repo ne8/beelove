@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from '../home-page/home-page.component';
 import { ShopListComponent } from '../shop/shop-list/shop-list.component';
 import { HoneyComponent } from '../honey/honey/honey.component';
+
 const appRoutes: Routes = [
   {
     path: '',

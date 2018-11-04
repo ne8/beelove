@@ -15,6 +15,7 @@ import { CartComponent } from './shop/cart/cart.component';
 import { ProductComponent } from './shop/product/product.component';
 import { HoneyComponent } from './honey/honey/honey.component';
 import { HtmlSanitizerPipe } from './pipes/html-sanitizer.pipe';
+import { BlogPostComponent } from './honey/blog-post/blog-post.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HtmlSanitizerPipe } from './pipes/html-sanitizer.pipe';
     CartComponent,
     ProductComponent,
     HoneyComponent,
-    HtmlSanitizerPipe
+    HtmlSanitizerPipe,
+    BlogPostComponent
   ],
   imports: [
     BrowserModule,

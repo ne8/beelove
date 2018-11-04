@@ -45,7 +45,9 @@
   color: #8c7363;
   text-align: center;
 }
-
+.banner{
+  margin-top: 6em;
+}
 .about-us-section .banner{
   background:  url("/assets/images/banner/banner-1.jpg") ;
   padding-bottom: 6em;

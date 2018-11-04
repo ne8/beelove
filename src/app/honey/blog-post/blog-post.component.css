@@ -1,4 +1,4 @@
-.shop-list-header {
+.blog-header {
     background-image: url('/assets/images/shop/honey-jar.jpg');
     background-size: cover;
 
@@ -6,7 +6,8 @@
 .page-title {
     width: 100%;
 }
- .page-title h1{
+
+.page-title h1{
     color: #fff;
     margin: 0;
     font-weight: 300;
@@ -17,6 +18,7 @@
     font-family: "Sansita One", cursive;
     text-align: center;
 }
+
 .breadcrumbs {
     padding: 0.7em 0 4.4em;
     text-align: center;
@@ -46,15 +48,40 @@
     vertical-align: top;
     text-align: center;
 }
+.breadcrumbs-delimiter:before {
+    content: '|';
+}
 
 .active{
     color: rgba(255,255,255,0.6)!important;
 }
 
-.breadcrumbs-delimiter:before {
-    content: '|';
-}
-.shop-list-body {
+.blog-content{
     padding: 7.15em 0;
 }
+.post-title{
+    color: #f8b742;
+    margin-top: 0;
+    margin-bottom: 1.63em;
+    font-family: "Sansita One", cursive;
+    line-height: 1.01em;
+}
+.post-title h3{
+    font-family: "Sansita One", cursive;
+    font-size: 2.857em;
 
+}
+.post-content{
+    margin-bottom: 3em;
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 3em;
+    width:100%;
+    color: #8c7363;
+    font-family: "Arimo", sans-serif;
+    font-size: 14px;
+    line-height: 1.8em;
+    font-weight: 400;
+}
+.post-content p{
+    margin-bottom: 1.75em;
+}
