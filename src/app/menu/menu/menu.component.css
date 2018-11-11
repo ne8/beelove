@@ -60,9 +60,7 @@
 .bee-menu .bee-nav li:hover a {
   color: #f8b742;
 }
-.bee-menu .bee-nav li:last-child:hover a{
 
-}
 .bee-menu .bee-nav li:last-child a{
   color: rgba(255, 255, 255, 0.7);
 }
@@ -112,4 +110,17 @@
 }
 .custom-toggler .navbar-toggler-icon {
 background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#f8b742' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.mini-cart {
+  display:none;
+}
+.bee-navbar{
+  padding-bottom:0px;
+}
+
+@media only screen and (max-width: 768px) {
+  .bee-nav li{
+    padding: 0;
+  }
+
 }

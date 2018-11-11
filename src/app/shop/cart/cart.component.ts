@@ -27,7 +27,7 @@ export class CartComponent implements OnInit, DoCheck {
   calculateTotal() {
     this.totalPrice = 0;
     for(let product of this.products){
-      this.totalPrice += product.price;
+      this.totalPrice += product.price * product.quantity;
     }
   }
 

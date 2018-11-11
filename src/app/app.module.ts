@@ -18,6 +18,7 @@ import { HtmlSanitizerPipe } from './pipes/html-sanitizer.pipe';
 import { BlogPostComponent } from './honey/blog-post/blog-post.component';
 import { CheckoutComponent } from './shop/checkout/checkout.component';
 import { NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     HttpClientModule,
     AppRoutesModule,
-    NgbModalModule
+    NgbModalModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

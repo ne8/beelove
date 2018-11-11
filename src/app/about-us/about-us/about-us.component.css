@@ -113,7 +113,12 @@
   transform-origin: 50% 50% 0px;
   color: rgb(255, 255, 255);
 }
-
+.bee-shop-button a{
+  color : #ffffff;
+}
+.bee-shop-button a:hover{
+  text-decoration: none;
+}
 .bee-shop-button:hover {
   background-color: #f8b742;
   border-color: #f8b742;
