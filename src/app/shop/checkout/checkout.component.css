@@ -1,6 +1,4 @@
-.checkout-form{
-    font-family: Arimo, sans-serif;
-}
+
 .checkout{
     display:block;
     width:100%;
@@ -43,7 +41,7 @@
     font-weight: 600;
 }
 
-.bee-form-control{
+.bee-form-control {
     line-height: 1.85em;
     padding: 0.764em 1em;
     box-sizing: border-box;
@@ -58,19 +56,17 @@
     vertical-align: baseline;
     text-align: start;
     font-family: Arimo, sans-serif;
-
-
 }
 .bee-form-control:focus{
     border-color: #f8b742;
     outline: 0;
     box-shadow: none;
-    
+
 }
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .bee-label{

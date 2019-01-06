@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {SliderDataService} from '../providers/slider-data.service';
-import {interval} from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { SliderDataService } from '../providers/slider-data.service';
+import { interval } from 'rxjs';
+import { AboutUsDataService } from '../providers/about-us-data.service';
 
 @Component({
   selector: 'app-image-slider',
@@ -13,25 +14,40 @@ export class ImageSliderComponent implements OnInit {
   sliderArray: object[];
   refreshInterval: number;
 
-  constructor(private data: SliderDataService) {
+  aboutUsArray: AboutUs[];
+  aboutUsBanner: Banner;
+
+  constructor(
+    private sliderDataService: SliderDataService,
+    private aboutUsDataService: AboutUsDataService
+  ) {
     this.sliderArray = [];
     this.selectedIndex = 0;
     this.transform = 100;
     this.refreshInterval = 10000;
+    this.aboutUsBanner = new Banner();
+    this.aboutUsArray = new Array();
   }
 
   ngOnInit() {
-    this.data.getData().subscribe((result: SliderContent) => {
-      this.sliderArray = result.sliderArray;
+    this.sliderDataService.getData().subscribe((result: SliderImage[]) => {
+      this.sliderArray = result;
+      console.log(this.sliderArray);
     });
     interval(this.refreshInterval).subscribe(x => {
       if (this.selectedIndex + 2 > this.sliderArray.length) {
         this.selectedIndex = 0;
       } else {
-        this.selectedIndex ++;
+        this.selectedIndex++;
       }
     });
 
+    this.aboutUsDataService.getAboutUsContent().subscribe((result: AboutUs[] ) => {
+      this.aboutUsArray = result;
+    });
+    this.aboutUsDataService.getAboutUsBannerContent().subscribe((result: Banner) => {
+        this.aboutUsBanner = result;
+    });
   }
 
   selected(x) {
@@ -46,13 +62,23 @@ export class ImageSliderComponent implements OnInit {
   }
 }
 
-interface SliderContent {
-  sliderArray: SliderImage[];
-}
-
 interface SliderImage {
-  img: string;
+  imageLocation: string;
   alt: string;
   title: string;
   description: string;
+}
+
+
+
+class AboutUs {
+  imgLocation: string;
+  alt: string;
+  subtitle: string;
+  text: string;
+}
+
+class Banner {
+  title: string;
+  subtitle: string;
 }
