@@ -37,9 +37,7 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  get f() {
-    return this.registerForm.controls;
-  }
+
 
   onSubmit() {
     console.log(this.registerForm);
@@ -57,7 +55,7 @@ export class RegisterComponent implements OnInit {
           this.router.navigate(['/login']);
         },
         error => {
-          console.log('error idiot');
+          // TODO bring in a notification service for displaying errors
           this.loading = false;
         }
       );

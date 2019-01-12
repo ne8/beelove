@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from './models/user';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
@@ -8,9 +8,8 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  [x: string]: any;
   private currentUserSubject: BehaviorSubject<User>;
-  public currentUser;
+  public currentUser: Observable<User>;
 
   constructor(private httpClient: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<User>(
@@ -19,7 +18,7 @@ export class AuthenticationService {
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
-  public get CurrentUserValue(): User {
+  public get currentUserValue(): User {
     return this.currentUserSubject.value;
   }
 

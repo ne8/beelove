@@ -11,6 +11,9 @@ import { AuthenticationService } from './authentication.service';
 export class ErrorInterceptor implements HttpInterceptor {
   constructor(private authenticationService: AuthenticationService) {}
 
+  /**
+   * If 401 is returned from API user is automatically logged out
+   */
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
       return next.handle(request).pipe(catchError(err => {
           if (err.status === 401) {

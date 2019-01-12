@@ -11,8 +11,11 @@ export class TokenInterceptor implements HttpInterceptor {
 
   constructor(private authenticationService: AuthenticationService) {}
 
+  /**
+   * Intercepts requests and adds Oauth2 token on them
+   */
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const currentUser = this.authenticationService.getCurrentUserValue;
+    const currentUser = this.authenticationService.currentUserValue;
     if (currentUser && currentUser.token) {
       request = request.clone({
         setHeaders: {

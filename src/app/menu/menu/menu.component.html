@@ -25,9 +25,12 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/honey"  routerLinkActive="active">Despre miere</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/register"  routerLinkActive="active">Contul Meu</a>
+          <li class="nav-item" *ngIf="!currentUser">
+            <a class="nav-link" routerLink="/login"  routerLinkActive="active">Contul Meu</a>
           </li>
+          <li class="nav-item" *ngIf="currentUser">
+              <a class="nav-link" (click)='logout()' routerLinkActive="active">Logout</a>
+            </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="#">About</a>
           </li> -->

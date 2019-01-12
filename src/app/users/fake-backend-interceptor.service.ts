@@ -16,7 +16,7 @@ export class FakeBackendInterceptorService implements HttpInterceptor {
   constructor() {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log('intercepted');
+    console.log('Intercepting request in fake backend');
     // array in local storage for registered users
     const users: any[] = JSON.parse(localStorage.getItem('users')) || [];
 
@@ -40,7 +40,6 @@ export class FakeBackendInterceptorService implements HttpInterceptor {
                     lastName: user.lastName,
                     token: 'fake-jwt-token'
                 };
-
                 return of(new HttpResponse({ status: 200, body: body }));
             } else {
                 // else return 400 bad request

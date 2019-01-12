@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private authenicationService: AuthenticationService
+    private authenticationService: AuthenticationService
   ) {
     // TODO: complete back
     // if (this.authenicationService.CurrentUserValue) {
@@ -32,7 +32,9 @@ export class LoginComponent implements OnInit {
       username: ['', [Validators.required, Validators.minLength(6)]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+            // reset login status
+   this.authenticationService.logout();
+   this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
   get f() {
     return this.loginForm.controls;
@@ -40,21 +42,21 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-
+    console.log(this.loginForm);
     if (this.loginForm.invalid) {
       return;
     }
-
     this.loading = true;
-    this.authenicationService
+    this.authenticationService
       .login(this.f.username.value, this.f.password.value)
       .pipe(first())
       .subscribe(
-        data => {
+        () => {
           this.router.navigate([this.returnUrl]);
         },
         error => {
           console.log('you idiot got an error');
+          console.log(error);
           this.loading = false;
         }
       );
