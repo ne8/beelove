@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule, ErrorHandler} from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {MenuComponent} from './menu/menu/menu.component';
@@ -24,6 +24,8 @@ import { LoginComponent } from './users/login/login.component';
 import { TokenInterceptor } from './users/token-interceptor.service';
 import { ErrorInterceptor } from './users/error-interceptor.service';
 import { FakeBackendInterceptorService } from './users/fake-backend-interceptor.service';
+import { NotifierModule } from 'angular-notifier';
+import { ErrorsHandler } from './error-handling/errors-handler';
 
 @NgModule({
   declarations: [
@@ -49,12 +51,26 @@ import { FakeBackendInterceptorService } from './users/fake-backend-interceptor.
     HttpClientModule,
     AppRoutesModule,
     NgbModalModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NotifierModule.withConfig({
+      position: {
+        horizontal: {
+          position: 'right',
+          distance: 125
+        },
+        vertical: {
+          position: 'top',
+          distance: 120,
+        }
+      },
+
+    })
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: FakeBackendInterceptorService, multi: true},
+    {provide: ErrorHandler, useClass: ErrorsHandler},
 
   ],
   bootstrap: [AppComponent],

@@ -32,7 +32,6 @@ export class ImageSliderComponent implements OnInit {
   ngOnInit() {
     this.sliderDataService.getData().subscribe((result: SliderImage[]) => {
       this.sliderArray = result;
-      console.log(this.sliderArray);
     });
     interval(this.refreshInterval).subscribe(x => {
       if (this.selectedIndex + 2 > this.sliderArray.length) {

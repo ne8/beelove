@@ -3,6 +3,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
 import { first } from 'rxjs/operators';
+import { NotifierService } from 'angular-notifier';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +21,8 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private notifierService: NotifierService
   ) {
     // TODO: complete back
     // if (this.authenicationService.CurrentUserValue) {
@@ -52,11 +55,11 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe(
         () => {
+          this.notifierService.notify('success', 'Ati fost logat cu succes');
           this.router.navigate([this.returnUrl]);
         },
         error => {
-          console.log('you idiot got an error');
-          console.log(error);
+          this.notifierService.notify('error', 'Username si parola gresite');
           this.loading = false;
         }
       );

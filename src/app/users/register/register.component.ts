@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
 import { UserService } from '../user.service';
 import { first } from 'rxjs/operators';
+import { NotifierService } from 'angular-notifier';
 
 @Component({
   selector: 'app-register',
@@ -19,7 +20,8 @@ export class RegisterComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private authenticationService: AuthenticationService,
-    private userService: UserService
+    private userService: UserService,
+    private notifierService: NotifierService
   ) {
     // redirect to home if already logged in
     if (this.authenticationService.currentUserValue) {
@@ -37,10 +39,7 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-
-
   onSubmit() {
-    console.log(this.registerForm);
     this.submitted = false;
     if (this.registerForm.invalid) {
       return;
@@ -56,6 +55,12 @@ export class RegisterComponent implements OnInit {
         },
         error => {
           // TODO bring in a notification service for displaying errors
+          if (error === 'Conflict') {
+            this.notifierService.notify(
+              'warning',
+              'Adresa de email sau username-ul este deja inregistrat!'
+            );
+          }
           this.loading = false;
         }
       );
