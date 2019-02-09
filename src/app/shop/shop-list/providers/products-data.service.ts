@@ -17,5 +17,5 @@ export class ProductsDataService {
   }
 
   getProucts() {
-    return this.http.get(productsLocation,this.httpOptions);
+    return this.http.get(productsLocation, this.httpOptions);
   }}

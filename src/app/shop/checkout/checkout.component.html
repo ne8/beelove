@@ -29,9 +29,9 @@
         </div>
 
         <div class="form-group">
-          <label for="email" class="bee-label">Adresa de email: <abbr class="required" title="required">*</abbr></label>
-          <input autocomplete='tel-national' type="text" id="email" formControlName="email" class="form-control bee-form-control">
-          <span *ngIf="!checkoutForm.get('userData.email').valid && checkoutForm.get('userData.email').touched" class="help-block">
+          <label for="emailAddress" class="bee-label">Adresa de email: <abbr class="required" title="required">*</abbr></label>
+          <input autocomplete='tel-national' type="text" id="emailAddress" formControlName="emailAddress" class="form-control bee-form-control">
+          <span *ngIf="!checkoutForm.get('userData.emailAddress').valid && checkoutForm.get('userData.emailAddress').touched" class="help-block">
             Va rugam introduceti o adresa de email valida!
           </span>
         </div>
@@ -55,28 +55,21 @@
           </span>
         </div>
         <div class="form-group">
-          <label for="phone" class="bee-label">Numar telefon: <abbr class="required" title="required">*</abbr></label>
-          <input autocomplete='tel-national' type="text" id="phone" formControlName="phone" class="form-control bee-form-control">
-          <span *ngIf="!checkoutForm.get('address.phone').valid && checkoutForm.get('address.phone').touched" class="help-block">
-            <span *ngIf="checkoutForm.get('address.phone').errors['required']">Completati numarul de telefon!</span>
+          <label for="phoneNumber" class="bee-label">Numar telefon: <abbr class="required" title="required">*</abbr></label>
+          <input autocomplete='tel-national' type="text" id="phoneNumber" formControlName="phoneNumber" class="form-control bee-form-control">
+          <span *ngIf="!checkoutForm.get('address.phoneNumber').valid && checkoutForm.get('address.phoneNumber').touched" class="help-block">
+            <span *ngIf="checkoutForm.get('address.phoneNumber').errors['required']">Completati numarul de telefon!</span>
           </span>
         </div>
         <div class="form-group">
-          <label for="street" class="bee-label">Strada, numar, reper: <abbr class="required" title="required">*</abbr></label>
-          <input autocomplete='tel-national' type="text" id="street" formControlName="street" class="form-control bee-form-control">
-          <span *ngIf="!checkoutForm.get('address.street').valid && checkoutForm.get('address.street').touched" class="help-block">
-            <span *ngIf="checkoutForm.get('address.street').errors['required']">Completati cu un reper!</span>
+          <label for="fullAddress" class="bee-label">Strada, numar, reper: <abbr class="required" title="required">*</abbr></label>
+          <input autocomplete='tel-national' type="text" id="fullAddress" formControlName="fullAddress" class="form-control bee-form-control">
+          <span *ngIf="!checkoutForm.get('address.fullAddress').valid && checkoutForm.get('address.fullAddress').touched" class="help-block">
+            <span *ngIf="checkoutForm.get('address.fullAddress').errors['required']">Completati cu un reper!</span>
           </span>
         </div>
 
       </div>
-      <div formGroupName="order">
-        <input type="hidden" formControlName="productId">
-        <input type="hidden" formControlName="productName">
-        <input type="hidden" formControlName="quantity">
-        <input type="hidden" formControlName="price">
-      </div>
-
       <button class="place-order" type="submit">Plaseaza comanda</button>
 
     </form>

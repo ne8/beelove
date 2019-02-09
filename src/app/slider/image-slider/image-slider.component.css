@@ -58,7 +58,7 @@ img {
   min-height: 10px;
 }
 
-.text-container {
+.slider-container .text-container {
   justify-content: center;
   display: flex;
   align-items: center;

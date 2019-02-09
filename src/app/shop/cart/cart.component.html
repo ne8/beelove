@@ -5,7 +5,7 @@
             <li *ngFor="let product of products">
                 <img class="product-image" [src]="product.pathToImage" [alt]="product.name" />
                 <div class= "product-name">
-                    {{product.name}} 
+                    {{product.name}}
                     <a class="remove-button" (click) = "removeItem(product)" >×</a>
                 </div>
                 <div class="total">{{product.quantity}} × {{product.price}} RON</div>
@@ -19,5 +19,5 @@
         </p>
     </div>
 
-    <app-checkout [products]="products"></app-checkout>
+    <app-checkout [products]="products" (outProducts)="handleResult($event)"></app-checkout>
 </div>

@@ -17,7 +17,7 @@ const appRoutes: Routes = [
     component: ShopListComponent
   },
   {
-    path: 'honey',
+    path: 'despre-miere',
     component: HoneyComponent
   },
   {
@@ -44,8 +44,6 @@ const appRoutes: Routes = [
       // enableTracing: true
     })
   ],
-  exports:[RouterModule]
-
+  exports: [RouterModule]
 })
-export class AppRoutesModule { }
-
+export class AppRoutesModule {}
