@@ -18,7 +18,7 @@
           <div class="subtitle">
             <h4>Contacts</h4>
             <div class="text-wrapper">
-              <div class="info">123 (456) 7890 45</div>
+              <div class="info"> <a [href]="phoneNumber" class="phone-number">+40731898657</a></div>
               <div class="info">
                 <a class="mail-contact" href="mailto:info@yoursite.com">info@yoursite.com</a>
               </div>
@@ -32,8 +32,29 @@
           <h4>Follow Us
           </h4>
           <div class="social-wrapper">
-            <a [href]="facebookUrl" target="_blank" class="social-icon social-facebook">
-              <span class="icon-facebook-official"></span>
+            <a [href]="facebookUrl" target="_blank" class="social-icon">
+              <span class="icon-facebook-squared"></span>
+            </a>
+
+          </div>
+          <div class="social-wrapper">
+            <a [href]="instagramUrl" target="_blank" class="social-icon ">
+              <span class="icon-instagram"></span>
+            </a>
+          </div>
+          <div class="social-wrapper">
+            <a [href]="twitterUrl" target="_blank" class="social-icon ">
+              <span class="icon-twitter-squared"></span>
+            </a>
+          </div>
+          <div class="social-wrapper">
+            <a [href]="whatsappUrl" target="_blank" class="social-icon ">
+              <span class=" icon-whatsapp"></span>
+            </a>
+          </div>
+          <div class="social-wrapper">
+            <a [href]="snapachtUrL" target="_blank" class="social-icon ">
+              <span class="icon-snapchat-square"></span>
             </a>
           </div>
         </div>
@@ -45,7 +66,7 @@
     <div class="copyright">
 
       <div class="text-content">
-        <a href="" target="_blank">Company name</a> © 2018. All rights reserved.
+        <a href="" target="_blank">{{companyName}}</a> © 2018. All rights reserved.
       </div>
     </div>
   </div>

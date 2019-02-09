@@ -72,14 +72,16 @@
   padding: 2.7em 0 1.9em;
   overflow: hidden;
 }
-.icon-facebook-official {
+.social-wrapper{
+  display: inline-block;
+}
+.social-wrapper a {
   font-size: 2.25em;
   line-height: inherit;
 }
-.icon-facebook-official:hover {
+.social-wrapper a:hover {
   color: #f8b742;
 }
-
 
 
 .social-icon {
@@ -90,4 +92,11 @@
   line-height: 2.5em;
   background-position: 0 -2.5em;
   background-size: 2.5em 5em;
+}
+.info .phone-number{
+  color:rgba(251, 250, 247, 0.6);
+}
+.info .phone-number:hover {
+  color: #b8821d;
+  text-decoration: none;
 }
