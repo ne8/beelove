@@ -3,7 +3,9 @@ import {
   OnInit,
   Input,
   DoCheck,
-  IterableDiffers
+  IterableDiffers,
+  Output,
+  EventEmitter
 } from '@angular/core';
 import { ProductComponent } from '../product/product.component';
 import { Product } from '../product';
@@ -15,13 +17,13 @@ import { Product } from '../product';
 })
 export class CartComponent implements OnInit, DoCheck {
   @Input() products: Product[];
+  @Output() resolvedCheckout = new EventEmitter<String>() ;
 
   totalPrice: number;
   storageProducts: Product[];
   constructor(public differs: IterableDiffers) {}
 
   ngOnInit() {
-    // this.products.push(JSON.parse(sessionStorage.getItem('cart2')));
     this.storageProducts = JSON.parse(sessionStorage.getItem('cart'));
     if (this.storageProducts.length >= 1) {
       for (const product of this.storageProducts) {
@@ -54,7 +56,7 @@ export class CartComponent implements OnInit, DoCheck {
   }
   handleResult(result: Product[]) {
     if (result.length < 1) {
-      this.products = [];
+      this.resolvedCheckout.emit('resolved');
     }
   }
 }

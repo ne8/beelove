@@ -29,6 +29,10 @@ export class ShopListComponent implements OnInit {
       const indexOfProduct = this.addedProductsToCart.indexOf(product);
       this.addedProductsToCart[indexOfProduct].quantity++;
     }
-
+  }
+  handleCheckout(event) {
+    if (event === 'resolved') {
+      this.addedProductsToCart = [];
+    }
   }
 }
